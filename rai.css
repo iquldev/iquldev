@@ -132,7 +132,7 @@ a {
 
 .sc_button {
     display: flex;
-    width: 25%;
+    width: 100px;
     height: 31px;
     justify-content: center;
     align-items: center;
