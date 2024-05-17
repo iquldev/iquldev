@@ -138,7 +138,7 @@ a {
     align-items: center;
     flex-shrink: 0;
     border-radius: 30px;
-    background: rgba(54, 85, 165, 0.90);
+    background: var(--tg-theme-button-color);
     backdrop-filter: blur(1.5px);
     cursor: pointer;
     position: relative;
