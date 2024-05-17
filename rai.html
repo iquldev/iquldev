@@ -88,17 +88,100 @@
 
 </body>
 
- <script>
-    function updateTime() {
-      const date = new Date();
-      const hours = date.getUTCHours();
-      const minutes = date.getUTCMinutes();
-      const seconds = date.getUTCSeconds();
-      
-      const formattedTime = `${hours}:${minutes}:${seconds}`;
-      document.getElementById("timer").innerText = formattedTime;
+<script>
+
+    var WebApp = window.Telegram.WebApp;
+
+    let initDataURLSP = new URLSearchParams(WebApp.initData);
+
+    var hash = initDataURLSP.get('hash');
+
+    const targetDate = new Date('2024-05-17T15:00:00');
+
+    
+
+
+
+    function countdown() {
+
+        const now = new Date();
+
+        const diff = targetDate - now;
+
+
+
+        if (diff <= 0) {
+
+            clearInterval(intervalId);
+
+            console.log('Событие наступило!');
+
+            return;
+
+        }
+
+
+
+        const seconds = Math.floor(diff / 1000) % 60;
+
+        const minutes = Math.floor(diff / (1000 * 60)) % 60;
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+
+
+
+        const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+
+
+        const countdownElement = document.getElementById('timer'); 
+
+        countdownElement.textContent = formattedTime;
+
     }
 
-    setInterval(updateTime, 1000); // Обновляем время каждую секунду
-  </script>
+
+
+    const intervalId = setInterval(countdown, 1000);
+
+
+
+    initDataURLSP.delete('hash');
+
+    initDataURLSP.sort();
+
+    var checkDataString = initDataURLSP.toString().replaceAll('&', '\n');
+
+
+
+    let xhrURL = new URL('https://<your_domain>/<userIsValid>');
+
+    xhrURL.searchParams.set('hash', hash);
+
+    xhrURL.searchParams.set('checkDataString', checkDataString);
+
+
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', xhrURL);
+
+    xhr.send();
+
+    xhr.onload = function() {
+
+        if (JSON.parse(xhr.response).result == true) {
+
+            WebApp.showAlert(`Добро пожаловать! Этот бот пока что находиться в разработке, но вы уже можете им пользоваться.`);
+
+        } else {
+
+            WebApp.close();
+
+        }
+
+    }
+
+</script>
+
 </html>
