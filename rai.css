@@ -61,7 +61,7 @@ body {
     gap: 10px;
     flex-shrink: 0;
     border-radius: 30px;
-    background: var(--tg-theme-button-color);
+    background: rgba(54, 85, 165, 0.90);
     backdrop-filter: blur(1.5px);
     margin: auto;
     margin-top: 20px;
@@ -138,7 +138,7 @@ a {
     align-items: center;
     flex-shrink: 0;
     border-radius: 30px;
-    background: var(--tg-theme-button-color);
+    background: rgba(54, 85, 165, 0.90);
     backdrop-filter: blur(1.5px);
     cursor: pointer;
     position: relative;
