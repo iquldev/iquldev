@@ -66,6 +66,7 @@ body {
     margin: auto;
     margin-top: 20px;
     cursor: pointer;
+    transition: background-color 1s ease-out 100ms;
 }
 
 .rai_text {
@@ -143,6 +144,7 @@ a {
     cursor: pointer;
     position: relative;
     margin-left: 30px;
+    transition: background-color 1s ease-out 100ms;
 }
 
 .sc_btn_text {
@@ -192,3 +194,11 @@ a {
       color: #DCDCDC;
     }
   }
+
+.rai_button:hover {
+    background: rgba(64, 103, 204, 0.90);
+}
+
+.sc_button:hover {
+    background: rgba(64, 103, 204, 0.90);
+}
