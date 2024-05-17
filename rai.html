@@ -96,7 +96,7 @@
       const seconds = date.getUTCSeconds();
       
       const formattedTime = `${hours}:${minutes}:${seconds}`;
-      document.getElementById("time").innerText = formattedTime;
+      document.getElementById("timer").innerText = formattedTime;
     }
 
     setInterval(updateTime, 1000); // Обновляем время каждую секунду
