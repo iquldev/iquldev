@@ -95,7 +95,6 @@ a {
     margin-top: 15px;
     display: inline-flex;
     align-items: center;
-    gap: 15px;
 }
 
 .sc_image {
@@ -128,21 +127,22 @@ a {
 
 .sc_text {
     margin-top: -5px;
+    margin-left: 15px;
 }
 
 .sc_button {
-    display: flex;
+    display: inline-flex;
     width: 100px;
     height: 31px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     flex-shrink: 0;
     border-radius: 30px;
     background: rgba(54, 85, 165, 0.90);
     backdrop-filter: blur(1.5px);
-    margin: auto;
     cursor: pointer;
+    position: relative;
+    margin-left: 30px;
 }
 
 .sc_btn_text {
@@ -175,3 +175,20 @@ a {
     bottom: 0;
     width: 100%;
 }
+
+#timer {
+    color: white; /* Начальный цвет */
+    animation: timer-color 1s linear infinite;
+}
+
+@keyframes timer-color {
+    0% {
+      color: white;
+    }
+    50% {
+      color: #BBB;
+    }
+    100% {
+      color: #DCDCDC;
+    }
+  }
