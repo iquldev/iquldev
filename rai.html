@@ -1,94 +1,104 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>$RAI Hub</title>
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
     <link rel="stylesheet" href="rai.css">
+
 </head>
+
 <body>
+
     <div class="banner">
+
         <div class="image">
+
             <div class="image_border"><p class="image_text">Листинг $RAI через <span id="timer">00:00:00</span></p></div>
+
         </div>
+
         <div class="rai_button">
+
             <a href="https://t.me/rai_coin" class="rai_text">Telegram канал</a>
+
             <img src="images/tg.png" class="tg-icon">
+
         </div>
+
     </div>
+
     <div class="apps">
+
         <div class="shishcards">
+
             <img src="images/shishcards.jpg" class="sc_image">
+
             <div class="sc_text">
+
                 <p class="sc_title">Карты МишШиша</p>
+
                 <p class="sc_tint">Собирайте карточки и получайте $RAI</p>
+
             </div>
+
             <div class="sc_button">
+
                 <a href="https://t.me/mishshish_bot" class="sc_btn_text">Перейти</a>
+
             </div>
+
         </div>
+
         <div class="shishcards">
+
             <img src="images/shishlore.jpg" class="sc_image">
+
             <div class="sc_text">
+
                 <p class="sc_title">Миш Шиш Лор</p>
+
                 <p class="sc_tint">Канал владельца чата РАЙ</p>
+
             </div>
+
             <div class="sc_button">
+
                 <a href="https://t.me/mishshishlor" class="sc_btn_text">Перейти</a>
+
             </div>
+
         </div>
+
     </div>
+
     <div class="bottom_div">
+
         <p class="bottom_bar">есть идеи? пишите <a href="https://t.me/iquldev" class="profile">@iquldev</a></p>
+
     </div>
+
 </body>
-<script>
-    var WebApp = window.Telegram.WebApp;
-    let initDataURLSP = new URLSearchParams(WebApp.initData);
-    var hash = initDataURLSP.get('hash');
-    const targetDate = new Date('2024-05-17T15:00:00');
-    
 
-    function countdown() {
-        const now = new Date();
-        const diff = targetDate - now;
-
-        if (diff <= 0) {
-            clearInterval(intervalId);
-            console.log('Событие наступило!');
-            return;
-        }
-
-        const seconds = Math.floor(diff / 1000) % 60;
-        const minutes = Math.floor(diff / (1000 * 60)) % 60;
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-
-        const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-        const countdownElement = document.getElementById('timer'); 
-        countdownElement.textContent = formattedTime;
+ <script>
+    function updateTime() {
+      const date = new Date();
+      const hours = date.getUTCHours();
+      const minutes = date.getUTCMinutes();
+      const seconds = date.getUTCSeconds();
+      
+      const formattedTime = `${hours}:${minutes}:${seconds}`;
+      document.getElementById("time").innerText = formattedTime;
     }
 
-    const intervalId = setInterval(countdown, 1000);
-
-    initDataURLSP.delete('hash');
-    initDataURLSP.sort();
-    var checkDataString = initDataURLSP.toString().replaceAll('&', '\n');
-
-    let xhrURL = new URL('https://<your_domain>/<userIsValid>');
-    xhrURL.searchParams.set('hash', hash);
-    xhrURL.searchParams.set('checkDataString', checkDataString);
-
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', xhrURL);
-    xhr.send();
-    xhr.onload = function() {
-        if (JSON.parse(xhr.response).result == true) {
-            WebApp.showAlert(`Добро пожаловать! Этот бот пока что находиться в разработке, но вы уже можете им пользоваться.`);
-        } else {
-            WebApp.close();
-        }
-    }
-</script>
-</html>
+    setInterval(updateTime, 1000); // Обновляем время каждую секунду
+  </script>
+</html>htnl>
