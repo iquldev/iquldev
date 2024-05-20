@@ -157,26 +157,9 @@ a {
     user-select: none;
 }
 
-.bottom_bar {
-    color: #8F8F8F;
-    font-family: Rubik;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
 .profile {
     cursor: pointer;
     color: rgba(54, 85, 165, 0.90);
-}
-
-.bottom_div {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 #timer {
