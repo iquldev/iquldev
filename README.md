@@ -7,7 +7,7 @@ Junior Fullstack developer
 I used to do different things as a hobby. Now I actively work on the Nuxt framework, also design and write code in Python.
 
 * 🌍  I'm based in Belarus, Brest region
-* ✉️  You can contact me at [iquldev@gmail.com](mailto:iquldev@gmail.com)
+* ✉️  You can contact me at [iquldev@proton.me](mailto:iquldev@proton.me)
 * 🧠  Improving my backend and database skills.
 
 <a href="https://www.github.com/iquldev" target="_blank" rel="noreferrer"><img
